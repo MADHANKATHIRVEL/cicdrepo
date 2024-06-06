@@ -4,22 +4,21 @@ phases:
   install:
     commands:
       - echo "Installing dependencies..."
+
   pre_build:
     commands:
       - echo "Starting pre-build phase..."
+
   build:
     commands:
-      - echo "Building the project..."
-      - echo "Build completed on `date`"
+      - echo "Building the project"
+      - echo "Building completed on date"
+
   post_build:
     commands:
       - echo "Starting post-build phase..."
-      - echo "Creating directory structure if not exists..."
-      - mkdir -p scripts
-      - echo "Zipping the application..."
-      - zip -r output.zip cicdtestfile.txt appspec.yml scripts/
-      - echo "Zipping completed"
 
 artifacts:
   files:
-    - output.zip
+    - '**/*'
+  discard-paths: no
