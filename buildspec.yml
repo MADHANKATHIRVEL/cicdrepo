@@ -14,8 +14,10 @@ phases:
   post_build:
     commands:
       - echo "Starting post-build phase..."
+      - echo "Creating directory structure if not exists..."
+      - mkdir -p scripts
       - echo "Zipping the application..."
-      - zip -r output.zip index.html appspec.yml scripts/
+      - zip -r output.zip cicdtestfile.txt appspec.yml scripts/
       - echo "Zipping completed"
 
 artifacts:
